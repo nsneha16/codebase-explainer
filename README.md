@@ -53,7 +53,7 @@ llm_summary.py        send STRUCTURED facts (not raw code) to Claude ->
 main.py               tie it together, write README.md + diagram.mmd
 ```
 
-## Design decisions (for the interview)
+## Design decisions
 
 | Decision | Why |
 |---|---|

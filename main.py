@@ -200,7 +200,7 @@ def main() -> int:
         print(f"\nCould not clone repo — check the URL and your internet connection.\n({e})")
         return 1
     except Exception as e:  # noqa: BLE001 — last-resort catch, see module docstring
-        print(f"\nUnexpected error: {_friendly_error(e)}")
+        print(f"\nUnexpected error: {friendly_llm_error(e)}")
         print("Re-run with PYTHONTRACEBACK=1 set, or share this message, for the full trace.")
         import os
 
