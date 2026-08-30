@@ -2,7 +2,7 @@
 
 Give it a GitHub repo URL, it clones the repo, statically analyzes every
 `.py` file with `ast` (no regex hacks), builds an internal dependency
-graph, and uses Claude to generate a plain-English "start here" overview
+graph, and uses Gemini to generate a plain-English "start here" overview
 plus a per-file summary — grounded strictly in facts the parser already
 extracted (the LLM never sees raw source, only structured facts, so it
 can't hallucinate a function that doesn't exist).
@@ -15,7 +15,7 @@ cd codebase-explainer
 python3 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env             # then paste your ANTHROPIC_API_KEY into .env
+cp .env.example .env             # then paste your GEMINI_API_KEY into .env
 ```
 
 ## Run
@@ -29,7 +29,7 @@ Outputs go to `output/README.md` (human-readable report) and
 https://mermaid.live to view, or GitHub renders `.mmd` in markdown fences
 automatically).
 
-Add `--no-llm` to skip the Claude API calls and just see structural
+Add `--no-llm` to skip the Gemini API calls and just see structural
 analysis (useful for testing without burning API credits).
 
 ## Architecture
