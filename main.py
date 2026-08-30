@@ -175,17 +175,6 @@ def _write_readme(
     (out_dir / "README.md").write_text("\n".join(lines), encoding="utf-8")
 
 
-def _friendly_error(e: Exception) -> str:
-    """Translate known exception types into one short, actionable line.
-    Unrecognized exceptions fall back to str(e) — still readable, just
-    less specific."""
-    if genai_errors and isinstance(e, genai_errors.ClientError) and "RESOURCE_EXHAUSTED" in str(e):
-        return "Gemini free-tier rate limit hit. Wait a minute and re-run."
-    if genai_errors and isinstance(e, genai_errors.ServerError):
-        return "Gemini servers are overloaded right now. Try again shortly."
-    return str(e)
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description="Explain a GitHub Python codebase.")
     parser.add_argument("repo_url", help="GitHub repo URL to analyze")
