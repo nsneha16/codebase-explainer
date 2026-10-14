@@ -47,7 +47,7 @@ static_analysis.py   ast.parse() each file -> imports, functions, classes
 dependency_graph.py  resolve imports to internal repo files vs external
     │                packages -> build "file depends on file" graph
     ▼
-llm_summary.py        send STRUCTURED facts (not raw code) to Claude ->
+llm_summary.py        send STRUCTURED facts (not raw code) to Gemini ->
     │                 plain-English summaries
     ▼
 main.py               tie it together, write README.md + diagram.mmd
